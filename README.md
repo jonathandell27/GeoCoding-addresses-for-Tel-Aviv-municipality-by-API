@@ -31,8 +31,11 @@ Code steps:
 
 This is how it looks when you open the code:
 
+![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/c87d0dfa-d959-4fd5-84dc-8bff8da9d5f5)
 
-![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/ae663c36-d93d-4b40-b70d-2ea35ca42eea)
+
+
+![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/4a10d6f0-3ed0-4c98-a868-ee9fe4299470)
 
 
 
