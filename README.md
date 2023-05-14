@@ -40,4 +40,18 @@ For example:
 ![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/5bdc072a-524c-418c-8479-7539a2589d33)
 
 
+At the end of the process, your Output folder will contain:
+
+![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/66775a82-36f2-48b2-889b-41dc99319c52)
+
+
+![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/20ba11d2-8c48-4704-9f3a-6acce5f4e0c1)
+
+![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/b99880f5-f522-4531-a136-b31ca1dc7b95)
+
+
+
+
+
+
 
