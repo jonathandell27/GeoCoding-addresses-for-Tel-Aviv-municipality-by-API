@@ -2,6 +2,7 @@
 The purpose of this code is to append X Y coordinates in 2039 grid (Israel TM Grid) for an address in the city of Tel Aviv.
 
 The Input - an Excel table that has a field of an address in Tel Aviv (Hebrew) that includes a street name and a house number.
+
 The Output - an Excel table and an SHP file of the same Input table plus fields of X Y with a match percentage field from the API of the address layer of Tel Aviv municipality.
 
 The code is written by Python and includes the use of tkinter, arcpy, FuzzyWuzzy and more packages.
