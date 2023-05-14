@@ -8,6 +8,7 @@ import arcpy
 from tkinter import *
 from tkinter import filedialog
 from tkinter.filedialog import askopenfilename
+import shutil
 
 print(time.ctime())
 st = time.time()
@@ -52,7 +53,13 @@ def Inputfun():
     else:
         Inputlist.remove(Inputlist[0])
         Inputlist.append(Input)
-    path1.config(text="{}".format(Inputlist[0]))
+    if "xls" in Inputlist[0] :
+        path1.config(text="{}".format(Inputlist[0]))
+    else:
+        path1.config(text="Oh no! Choose again, only xlsx or xls format file")
+    print("Input table -{}".format(Inputlist[0]))
+
+        
     
 def savefile():
     savepath = filedialog.askdirectory()
@@ -130,13 +137,26 @@ def run ():
 
     df.to_excel(r"{}\Output.xlsx".format(savenamelist[0]))
     
+    print("Output.xlsx is ready")
+    
+    arcpy.XYTableToPoint_management(r"{}\Output.xlsx\Sheet1$".format(savenamelist[0]),r"{}\Output.shp".format(savenamelist[0]),"X","Y",None,arcpy.SpatialReference(2039))
+    
+    print("Output.shp is ready")
+    
+    # Loop through all files in the folder
+    for filename in os.listdir(currentDirectory):
+
+        # Check if the file is a GDB file
+        if filename.endswith(".lyrx"):
+            shutil.copyfile(r"{}\Output.lyrx".format(currentDirectory), r"{}\Output.lyrx".format(savenamelist[0]))
+            print("Output.lyrx is ready")
+    
     endtxt.config(text="The process was completed successfully!")
     
     print("The process was completed successfully!")
     print("Good work {}".format(username))
     print("\N{smiling face with sunglasses}")
     print("You can turn off the tool and be impressed from the results")
-
 
 root.title("GeoCode TLV")
 root.geometry('600x600')
