@@ -24,9 +24,10 @@ Code steps:
 
 3. Enter the name of the address field
 
-4.Selecting the Output folder
+5.  Selecting the Output folder
 
-5. Running the code
+7. Running the code
+
 
 This is how it looks when you open the code:
 
@@ -42,7 +43,8 @@ For example:
 
 At the end of the process, your Output folder will contain:
 
-![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/66775a82-36f2-48b2-889b-41dc99319c52)
+![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/6c1cb0a6-3e64-484e-be06-585e8a009c85)
+
 
 
 ![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/20ba11d2-8c48-4704-9f3a-6acce5f4e0c1)
