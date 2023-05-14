@@ -28,8 +28,12 @@ Code steps:
 
 5. Running the code
 
-This is how it looks when you open the code
+This is how it looks when you open the code:
+
+
 ![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/ae663c36-d93d-4b40-b70d-2ea35ca42eea)
+
+
 
 For example:
 
