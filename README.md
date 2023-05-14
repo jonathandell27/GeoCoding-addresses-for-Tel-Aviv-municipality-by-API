@@ -14,7 +14,7 @@ The code files:
 
 1. GeoCode.py
 2. Output.lyrx
-3. fuzzywuzzy folder
+3. fuzzywuzzy folder - Not required if you already have it installed
 
 Code steps:
 
