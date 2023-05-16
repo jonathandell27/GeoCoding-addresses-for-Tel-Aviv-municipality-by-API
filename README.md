@@ -1,21 +1,32 @@
 # GeoCoding-addresses-for-Tel-Aviv-municipality
-The purpose of this code is to append X Y coordinates in 2039 grid (Israel TM Grid) for an address in the city of Tel Aviv.
+The purpose of this code is to append X Y coordinates in 2039 grid (Israel TM Grid) for a text address in Tel Aviv.
 
 The Input - an Excel table that has a field of an address in Tel Aviv (Hebrew) that includes a street name and a house number.
 
-The Output - an Excel table and an SHP file of the same Input table plus fields of X Y with a match percentage field from the API of the address layer of Tel Aviv municipality.
+The Output - an Excel table and SHP file of the same Input table plus fields of X Y with a match percentage field from the free API of the address layer of Tel Aviv municipality.
 
-The code is written by Python and includes the use of tkinter, arcpy, FuzzyWuzzy and more packages.
+There are 2 options for executing the code:
+
+   #GeoCode Arcpy
+   Code that includes the use of the Arcpy package of ArcGIS.
+     - Faster
+     - Only for ArcGIS Pro users (paid)
+     
+   #GeoCode Open Source:
+   Code that includes the use of open source packages
+     -free
+     - About 2-4 minutes slower than Arcpy's code
 
 Before running this code, make sure that:
-1. ArcGIS Pro version 2.5 or higher is installed on your computer.
+1. for GeoCode Arcpy - make sure you have ArcGIS Pro version 2.5 or higher that installed on your computer.
 2. Optional - download FuzzyWuzzy package (PIP Install). 
 
 The code files:
 
-1. GeoCode.py
-2. Output.lyrx
-3. fuzzywuzzy folder - Not required if you already have it installed
+1. GeoCode Arcpy.py
+2. GeoCode Open Source.py
+3. Output.lyrx
+4. fuzzywuzzy folder - Not required if you already have it installed
 
 Code steps:
 
