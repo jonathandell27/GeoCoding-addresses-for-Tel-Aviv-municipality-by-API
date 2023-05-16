@@ -8,13 +8,19 @@ The Output - an Excel table and SHP file of the same Input table plus fields of 
 There are 2 options for executing the code:
 
    #GeoCode Arcpy
+   
    Code that includes the use of the Arcpy package of ArcGIS.
+   
      - Faster
+     
      - Only for ArcGIS Pro users (paid)
      
    #GeoCode Open Source:
+   
    Code that includes the use of open source packages
+   
      -free
+     
      - About 2-4 minutes slower than Arcpy's code
 
 Before running this code, make sure that:
