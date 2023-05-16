@@ -1,7 +1,7 @@
 # GeoCoding-addresses-for-Tel-Aviv-municipality
 The purpose of this code is to append X Y coordinates in 2039 grid (Israel TM Grid) for a text address in Tel Aviv.
 
-The Input - an Excel table that has a field of an address in Tel Aviv (Hebrew) that includes a street name and a house number.
+The Input - an Excel table that has a field of an address in Tel Aviv that includes a street name and a house number in Hebrew.
 
 The Output - an Excel table and SHP file of the same Input table plus fields of X Y with a match percentage field from the free API of the address layer of Tel Aviv municipality.
 
