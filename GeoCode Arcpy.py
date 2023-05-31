@@ -134,6 +134,14 @@ def run ():
     df2 = pd.DataFrame(list(zip(T1,Address_match,k_rechov,pointX,pointY,final_numbers)), columns = columns)
     
     df = pd.concat([df1, df2], axis=1)
+ 
+    # Loop through all files in the folder
+    for filename in os.listdir(savenamelist[0]):
+
+        # Check if the file is a GDB file
+        if filename.startswith("Output"):  
+            os.remove(r"{}\{}".format(savenamelist[0],filename))
+            print("Delete {}".format(filename))
 
     df.to_excel(r"{}\Output.xlsx".format(savenamelist[0]))
     
