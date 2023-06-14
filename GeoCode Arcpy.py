@@ -9,6 +9,7 @@ from tkinter import *
 from tkinter import filedialog
 from tkinter.filedialog import askopenfilename
 import shutil
+import re
 
 print(time.ctime())
 st = time.time()
@@ -31,6 +32,7 @@ C2 = dftable['t_rechov'].tolist()
 C3 = dftable['x'].tolist()
 C4 = dftable['y'].tolist()
 C5 = dftable['k_rechov'].tolist()
+C6 = dftable['ms_bayit'].tolist()
 Streets = list(set(C2))
 Streets = sorted(Streets)
 
@@ -58,7 +60,6 @@ def Inputfun():
     else:
         path1.config(text="Oh no! Choose again, only xlsx or xls format file")
     print("Input table -{}".format(Inputlist[0]))
-
         
     
 def savefile():
@@ -116,8 +117,29 @@ def run ():
             Avafuzzy.append(score)
             Address_value.append(C)
             if score == 100:
-                break
-                                   
+                break  
+                                                         
+        if max(Avafuzzy) < 100 :
+            fixaddreses = C1[C2.index(street):rindex(C2,street)+ 1]
+            fixnumbers = C6[C2.index(street):rindex(C2,street)+ 1]
+            numbers = re.findall(r'\d+', T)
+            if numbers:
+                number = int(numbers[0])
+                if number in fixnumbers:
+                    street1 = re.split(r'\d+', street)[0].strip().split()
+                    Tname = re.split(r'\d+', T)[0].strip().split()
+                    counter = []
+                    for word in Tname:
+                        if len(street1) == 1 or len(Tname) == 1: 
+                            if word in street1:
+                                Avafuzzy.append(99.99)
+                                Address_value.append(fixaddreses[fixnumbers.index(number)])
+                        elif word in street1:
+                            counter.append(word)
+                    if len(counter) > 1 :
+                        Avafuzzy.append(99.99)
+                        Address_value.append(fixaddreses[fixnumbers.index(number)])
+                                      
         final_numbers.append(max(Avafuzzy))
         Address_match.append(Address_value[Avafuzzy.index(max(Avafuzzy))])
         pointX.append(C3[C1.index(Address_match[-1])])

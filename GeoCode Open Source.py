@@ -10,6 +10,7 @@ from tkinter.filedialog import askopenfilename
 import shutil
 import requests
 import shapefile
+import re
 
 print(time.ctime())
 st = time.time()
@@ -74,6 +75,7 @@ C2 = dftable['t_rechov'].tolist()
 C3 = dftable['x'].tolist()
 C4 = dftable['y'].tolist()
 C5 = dftable['k_rechov'].tolist()
+C6 = dftable['ms_bayit'].tolist()
 Streets = list(set(C2))
 Streets = sorted(Streets)
 
@@ -159,6 +161,26 @@ def run ():
             Address_value.append(C)
             if score == 100:
                 break
+        if max(Avafuzzy) < 100 :
+            fixaddreses = C1[C2.index(street):rindex(C2,street)+ 1]
+            fixnumbers = C6[C2.index(street):rindex(C2,street)+ 1]
+            numbers = re.findall(r'\d+', T)
+            if numbers:
+                number = int(numbers[0])
+                if number in fixnumbers:
+                    street1 = re.split(r'\d+', street)[0].strip().split()
+                    Tname = re.split(r'\d+', T)[0].strip().split()
+                    counter = []
+                    for word in Tname:
+                        if len(street1) == 1 or len(Tname) == 1: 
+                            if word in street1:
+                                Avafuzzy.append(99.99)
+                                Address_value.append(fixaddreses[fixnumbers.index(number)])
+                        elif word in street1:
+                            counter.append(word)
+                    if len(counter) > 1 :
+                        Avafuzzy.append(99.99)
+                        Address_value.append(fixaddreses[fixnumbers.index(number)]) 
                                    
         final_numbers.append(max(Avafuzzy))
         Address_match.append(Address_value[Avafuzzy.index(max(Avafuzzy))])
@@ -189,6 +211,8 @@ def run ():
     
     print("Output.xlsx is ready")
     
+    df = df.fillna(0)
+    
     #arcpy.XYTableToPoint_management(r"{}\Output.xlsx\Sheet1$".format(savenamelist[0]),r"{}\Output.shp".format(savenamelist[0]),"X","Y",None,arcpy.SpatialReference(2039))
     
     # Get all fields (columns) from the DataFrame
@@ -204,7 +228,7 @@ def run ():
         'float64': 'F',
         'object': 'C'
     }
-
+    
     # Add the attribute fields to the shapefile with appropriate data types
     for field, dtype in zip(df.columns, df.dtypes):
         field_type = type_mapping.get(str(dtype), 'C')
@@ -215,6 +239,7 @@ def run ():
         x = row['X']
         y = row['Y']
         shp_writer.point(x, y)
+        print("test")
         shp_writer.record(*row.values)
 
     # Save the shapefile
