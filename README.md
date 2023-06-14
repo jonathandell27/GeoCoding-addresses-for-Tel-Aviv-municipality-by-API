@@ -70,7 +70,8 @@ At the end of the process, your Output folder will contain:
 
 ![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/20ba11d2-8c48-4704-9f3a-6acce5f4e0c1)
 
-![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/b99880f5-f522-4531-a136-b31ca1dc7b95)
+![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/157f3d3f-0818-4bdf-87fb-18a4be7183b9)
+
 
 ![image](https://github.com/jonathandell27/GeoCoding-addresses-for-Tel-Aviv-municipality-by-API/assets/59395234/c6f0bb80-0f84-443a-b373-02278e9325af)
 
