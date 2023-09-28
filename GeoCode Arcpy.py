@@ -22,7 +22,7 @@ print("Hello {}!".format(username))
 
 #Connects to the Addresses layer in IView2
 print("Connects to the Addresses layer in IView2")
-table = "https://dgt-ags02/arcgis/rest/services/IView2/MapServer/527"
+table = "https://gisn.tel-aviv.gov.il/arcgis/rest/services/WM/IView2WM/MapServer/527"
 tableFields = [i.name for i in arcpy.ListFields(table)]
 dftable = pd.DataFrame.from_records(data=arcpy.da.SearchCursor(table,tableFields),columns=tableFields)
 dftable = dftable.sort_values(by='t_rechov')
